@@ -3,20 +3,24 @@ class Product {
   final String name;
   final String description;
   final double price;
-  final String imageUrl;
   final String restaurantId;
+  final String restaurantName;
+  final String image;
   final List<String> categories;
   final bool isAvailable;
+  final int preparationTime;
 
   Product({
     required this.id,
     required this.name,
     required this.description,
     required this.price,
-    required this.imageUrl,
     required this.restaurantId,
+    required this.restaurantName,
+    required this.image,
     required this.categories,
-    required this.isAvailable,
+    this.isAvailable = true,
+    this.preparationTime = 15,
   });
 
   factory Product.fromJson(Map<String, dynamic> json) {
@@ -25,10 +29,12 @@ class Product {
       name: json['name'],
       description: json['description'],
       price: json['price'].toDouble(),
-      imageUrl: json['imageUrl'],
       restaurantId: json['restaurantId'],
+      restaurantName: json['restaurantName'],
+      image: json['image'],
       categories: List<String>.from(json['categories']),
       isAvailable: json['isAvailable'],
+      preparationTime: json['preparationTime'],
     );
   }
 
@@ -38,10 +44,12 @@ class Product {
       'name': name,
       'description': description,
       'price': price,
-      'imageUrl': imageUrl,
       'restaurantId': restaurantId,
+      'restaurantName': restaurantName,
+      'image': image,
       'categories': categories,
       'isAvailable': isAvailable,
+      'preparationTime': preparationTime,
     };
   }
 }
