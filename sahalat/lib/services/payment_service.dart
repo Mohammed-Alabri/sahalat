@@ -127,8 +127,18 @@ class PaymentService {
 
   static Future<void> _savePaymentMethods(List<PaymentMethod> methods) async {
     final prefs = await SharedPreferences.getInstance();
-    final data = jsonEncode(methods.map((m) => m.toJson()).toList());
-    await prefs.setString(_key, data);
+    final jsonList = methods.map((method) => method.toJson()).toList();
+    await prefs.setString(_key, jsonEncode(jsonList));
+  }
+
+  static Future<void> clearAllPaymentMethods() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove(_key);
+  }
+
+  // Initialize payment service - clear any existing data
+  static Future<void> initialize() async {
+    await clearAllPaymentMethods();
   }
 
   // Simulate payment processing

@@ -16,9 +16,11 @@ import 'package:sahalat/services/address_service.dart';
 import 'package:sahalat/pages/payment_methods_page.dart';
 import 'package:sahalat/pages/add_card_page.dart';
 import 'package:sahalat/pages/add_bank_page.dart';
+import 'package:sahalat/services/payment_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await PaymentService.initialize(); // Clear any saved payment methods
   runApp(const MyApp());
 }
 

@@ -72,6 +72,7 @@ class _CartPageState extends State<CartPage> {
       return;
     }
 
+    setState(() => _isLoading = true);
     try {
       final updatedItem = item.copyWith(quantity: newQuantity);
       await CartService.updateCartItem(updatedItem);
@@ -82,6 +83,10 @@ class _CartPageState extends State<CartPage> {
         const SnackBar(
             content: Text('Failed to update quantity. Please try again.')),
       );
+    } finally {
+      if (mounted) {
+        setState(() => _isLoading = false);
+      }
     }
   }
 
@@ -176,7 +181,6 @@ class _CartPageState extends State<CartPage> {
       return;
     }
 
-    // TODO: Implement checkout navigation
     Navigator.pushNamed(context, '/checkout');
   }
 
@@ -392,66 +396,57 @@ class _CartPageState extends State<CartPage> {
     } else if (_cartItems.isEmpty) {
       content = _buildEmptyState();
     } else {
-      content = RefreshIndicator(
-        onRefresh: _loadCartItems,
-        child: Column(
-          children: [
-            if (_hasMultipleRestaurants)
-              Container(
-                padding: const EdgeInsets.all(16),
-                color: Colors.orange[100],
-                child: const Row(
-                  children: [
-                    Icon(Icons.warning, color: Colors.orange),
-                    SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        'You have items from multiple restaurants. Please order from one restaurant at a time.',
-                        style: TextStyle(color: Colors.orange),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            Expanded(
-              child: ListView(
+      content = ListView(
+        children: [
+          if (_hasMultipleRestaurants)
+            Container(
+              padding: const EdgeInsets.all(16),
+              color: Colors.orange[100],
+              child: const Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Cart (${_cartItems.length})',
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextButton.icon(
-                          onPressed: _showClearCartDialog,
-                          icon: const Icon(Icons.delete_outline),
-                          label: const Text('Clear Cart'),
-                        ),
-                      ],
+                  Icon(Icons.warning, color: Colors.orange),
+                  SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      'You have items from multiple restaurants. Please order from one restaurant at a time.',
+                      style: TextStyle(color: Colors.orange),
                     ),
                   ),
-                  ..._cartItems.map(_buildCartItem),
-                  _buildTotalSection(),
-                  const SizedBox(height: 100), // Space for bottom button
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: CustomButton(
-                onPressed: _navigateToCheckout,
-                text: 'Proceed to Checkout',
-                isDisabled: _hasMultipleRestaurants,
-              ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Cart (${_cartItems.length})',
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                TextButton.icon(
+                  onPressed: _showClearCartDialog,
+                  icon: const Icon(Icons.delete_outline),
+                  label: const Text('Clear Cart'),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+          ..._cartItems.map(_buildCartItem).toList(),
+          _buildTotalSection(),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: CustomButton(
+              onPressed: _navigateToCheckout,
+              text: 'Proceed to Checkout',
+              isDisabled: _hasMultipleRestaurants,
+            ),
+          ),
+          const SizedBox(height: 100), // Space for bottom button
+        ],
       );
     }
 

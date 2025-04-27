@@ -306,6 +306,20 @@ class _PaymentMethodsPageState extends State<PaymentMethodsPage> {
       appBar: AppBar(
         title: const Text('Payment Methods'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.delete_forever),
+            onPressed: () async {
+              await PaymentService.clearAllPaymentMethods();
+              await _loadPaymentMethods();
+              if (mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('All payment methods cleared')),
+                );
+              }
+            },
+          ),
+        ],
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
