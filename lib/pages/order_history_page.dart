@@ -64,7 +64,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage>
                       color: AppTheme.primaryColor.withOpacity(0.1),
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.search,
                       color: AppTheme.primaryColor,
                     ),
@@ -286,7 +286,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage>
                     Container(
                       width: 8,
                       height: 8,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: AppTheme.primaryColor,
                         shape: BoxShape.circle,
                       ),
@@ -294,7 +294,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage>
                     const SizedBox(width: 8),
                     Text(
                       status,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: AppTheme.primaryColor,
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
@@ -302,7 +302,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage>
                     ),
                   ],
                 ),
-                Row(
+                const Row(
                   children: [
                     Text(
                       'Track Order',
@@ -312,7 +312,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage>
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    const SizedBox(width: 4),
+                    SizedBox(width: 4),
                     Icon(
                       Icons.arrow_forward_ios,
                       color: AppTheme.primaryColor,

@@ -61,7 +61,7 @@ class _DeliveryAddressesPageState extends State<DeliveryAddressesPage> {
           children: [
             Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.home_outlined,
                   color: AppTheme.primaryColor,
                   size: 24,
@@ -85,7 +85,7 @@ class _DeliveryAddressesPageState extends State<DeliveryAddressesPage> {
                       color: AppTheme.primaryColor.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(4),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Default',
                       style: TextStyle(
                         color: AppTheme.primaryColor,
@@ -97,8 +97,7 @@ class _DeliveryAddressesPageState extends State<DeliveryAddressesPage> {
             ),
             const SizedBox(height: 8),
             Text(
-              '${address.street}, ${address.building}' +
-                  (address.apartment != null ? ', ${address.apartment}' : ''),
+              '${address.street}, ${address.building}${address.apartment != null ? ', ${address.apartment}' : ''}',
               style: const TextStyle(fontSize: 16),
             ),
             Text(
@@ -128,7 +127,7 @@ class _DeliveryAddressesPageState extends State<DeliveryAddressesPage> {
                       arguments: address,
                     ).then((_) => _loadAddresses());
                   },
-                  child: Text(
+                  child: const Text(
                     'Edit',
                     style: TextStyle(
                       color: AppTheme.primaryColor,

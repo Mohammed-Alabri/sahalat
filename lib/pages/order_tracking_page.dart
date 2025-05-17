@@ -225,7 +225,7 @@ class _OrderTrackingPageState extends State<OrderTrackingPage> {
                   color: AppTheme.primaryColor.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.access_time,
                   color: AppTheme.primaryColor,
                 ),
@@ -292,7 +292,7 @@ class _OrderTrackingPageState extends State<OrderTrackingPage> {
                   label: const Text('Chat'),
                   style: OutlinedButton.styleFrom(
                     foregroundColor: AppTheme.primaryColor,
-                    side: BorderSide(color: AppTheme.primaryColor),
+                    side: const BorderSide(color: AppTheme.primaryColor),
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),

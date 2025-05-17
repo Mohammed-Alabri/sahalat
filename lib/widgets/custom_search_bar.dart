@@ -37,11 +37,11 @@ class CustomSearchBar extends StatelessWidget {
             color: Colors.grey[400],
             fontSize: 16,
           ),
-          prefixIcon: Icon(
+          prefixIcon: const Icon(
             Icons.search,
             color: AppTheme.primaryColor,
           ),
-          suffixIcon: Icon(
+          suffixIcon: const Icon(
             Icons.tune,
             color: AppTheme.primaryColor,
           ),

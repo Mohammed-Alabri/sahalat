@@ -8,7 +8,7 @@ class DefaultFirebaseOptions {
       messagingSenderId: '717991720734',
       projectId: 'sahalat-337c6',
       storageBucket: 'sahalat-337c6.appspot.com',
-      androidClientId: '717991720734-abc123def456.apps.googleusercontent.com', // Replace with your actual client ID
+      androidClientId: '717991720734-abc123def456.apps.googleusercontent.com', 
     );
   }
 } 

@@ -382,7 +382,7 @@ class _RestaurantDetailsPageState extends State<RestaurantDetailsPage> with Sing
                                   const SizedBox(height: 8),
                                   Text(
                                     '\$${item.price.toStringAsFixed(2)}',
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 16,
                                       color: AppTheme.primaryColor,
                                       fontWeight: FontWeight.bold,

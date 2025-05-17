@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sahalat/models/restaurant.dart';
 import 'package:sahalat/services/restaurant_service.dart';
 import 'package:sahalat/services/navigation_service.dart';
-import 'package:sahalat/theme/app_theme.dart';
 import 'package:sahalat/widgets/custom_search_bar.dart';
 
 class RestaurantListPage extends StatefulWidget {

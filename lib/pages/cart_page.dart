@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sahalat/models/cart_item.dart';
 import 'package:sahalat/services/cart_service.dart';
-import 'package:sahalat/theme/app_theme.dart';
 import 'package:sahalat/widgets/custom_button.dart';
 import 'package:sahalat/services/navigation_service.dart';
 
@@ -19,7 +18,7 @@ class _CartPageState extends State<CartPage> {
   String? _error;
   List<CartItem> _cartItems = [];
   double _subtotal = 0;
-  double _deliveryFee = 5.0; // Example fixed delivery fee
+  final double _deliveryFee = 5.0; // Example fixed delivery fee
   double _tax = 0;
   bool _hasMultipleRestaurants = false;
 

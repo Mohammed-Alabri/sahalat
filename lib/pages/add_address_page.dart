@@ -277,7 +277,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: AppTheme.primaryColor),
+        borderSide: const BorderSide(color: AppTheme.primaryColor),
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),

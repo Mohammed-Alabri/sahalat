@@ -98,9 +98,9 @@ class _HelpSupportPageState extends State<HelpSupportPage> {
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: AppTheme.primaryColor,
-                borderRadius: const BorderRadius.only(
+                borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30),
                   bottomRight: Radius.circular(30),
                 ),
@@ -373,7 +373,7 @@ class _HelpSupportPageState extends State<HelpSupportPage> {
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide(
+        borderSide: const BorderSide(
           color: AppTheme.primaryColor,
           width: 2,
         ),

@@ -81,7 +81,7 @@ class OrderTrackingService extends ChangeNotifier {
     } else {
       final hours = difference.inHours;
       final minutes = difference.inMinutes % 60;
-      return '$hours hr ${minutes} min';
+      return '$hours hr $minutes min';
     }
   }
 

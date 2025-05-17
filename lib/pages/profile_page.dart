@@ -3,7 +3,6 @@ import 'package:sahalat/services/auth_service.dart';
 import 'package:sahalat/theme/app_theme.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
-import 'package:sahalat/models/user.dart';
 import 'package:sahalat/pages/delivery_addresses_page.dart';
 import 'package:sahalat/pages/payment_methods_page.dart';
 import 'package:sahalat/pages/help_support_page.dart';
@@ -217,7 +216,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       ? NetworkImage(_currentImageUrl!) as ImageProvider
                       : null,
               child: (_imageFile == null && _currentImageUrl == null)
-                  ? Icon(
+                  ? const Icon(
                       Icons.person,
                       size: 50,
                       color: AppTheme.primaryColor,
@@ -269,7 +268,7 @@ class _ProfilePageState extends State<ProfilePage> {
               border: border,
               enabledBorder: border,
               focusedBorder: border.copyWith(
-                borderSide: BorderSide(
+                borderSide: const BorderSide(
                   color: AppTheme.primaryColor,
                   width: 2,
                 ),
@@ -292,7 +291,7 @@ class _ProfilePageState extends State<ProfilePage> {
               border: border,
               enabledBorder: border,
               focusedBorder: border.copyWith(
-                borderSide: BorderSide(
+                borderSide: const BorderSide(
                   color: AppTheme.primaryColor,
                   width: 2,
                 ),
@@ -318,7 +317,7 @@ class _ProfilePageState extends State<ProfilePage> {
               border: border,
               enabledBorder: border,
               focusedBorder: border.copyWith(
-                borderSide: BorderSide(
+                borderSide: const BorderSide(
                   color: AppTheme.primaryColor,
                   width: 2,
                 ),
@@ -342,7 +341,7 @@ class _ProfilePageState extends State<ProfilePage> {
               border: border,
               enabledBorder: border,
               focusedBorder: border.copyWith(
-                borderSide: BorderSide(
+                borderSide: const BorderSide(
                   color: AppTheme.primaryColor,
                   width: 2,
                 ),

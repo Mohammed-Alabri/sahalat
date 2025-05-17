@@ -129,7 +129,7 @@ class RestaurantCard extends StatelessWidget {
                   const SizedBox(height: 8),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.delivery_dining,
                         size: 16,
                         color: AppTheme.primaryColor,

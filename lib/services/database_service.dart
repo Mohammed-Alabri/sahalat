@@ -305,7 +305,7 @@ class DatabaseService {
     
     if (searchQuery != null && searchQuery.isNotEmpty) {
       query = query.where('name', isGreaterThanOrEqualTo: searchQuery)
-                  .where('name', isLessThan: searchQuery + 'z');
+                  .where('name', isLessThan: '${searchQuery}z');
     }
     
     return query.snapshots();
@@ -370,7 +370,7 @@ class DatabaseService {
     
     if (searchQuery != null && searchQuery.isNotEmpty) {
       query = query.where('name', isGreaterThanOrEqualTo: searchQuery)
-                  .where('name', isLessThan: searchQuery + 'z');
+                  .where('name', isLessThan: '${searchQuery}z');
     }
     
     return query.snapshots();
@@ -381,11 +381,11 @@ class DatabaseService {
     final results = await Future.wait([
       _productsCollection
           .where('name', isGreaterThanOrEqualTo: query)
-          .where('name', isLessThan: query + 'z')
+          .where('name', isLessThan: '${query}z')
           .get(),
       _restaurantsCollection
           .where('name', isGreaterThanOrEqualTo: query)
-          .where('name', isLessThan: query + 'z')
+          .where('name', isLessThan: '${query}z')
           .get(),
     ]);
     return results;

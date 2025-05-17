@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sahalat/theme/app_theme.dart';
 
 class RestaurantCardSkeleton extends StatelessWidget {
   const RestaurantCardSkeleton({super.key});

@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sahalat/theme/app_theme.dart';
 import 'package:sahalat/widgets/custom_search_bar.dart';
-import 'package:sahalat/widgets/category_card.dart';
-import 'package:sahalat/widgets/restaurant_card.dart';
 import 'package:sahalat/widgets/restaurant_card_skeleton.dart';
-import 'package:sahalat/widgets/app_logo.dart';
 import 'package:sahalat/services/navigation_service.dart';
-import 'package:sahalat/services/restaurant_service.dart';
 import 'package:sahalat/models/restaurant.dart';
-import 'package:sahalat/services/database_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 

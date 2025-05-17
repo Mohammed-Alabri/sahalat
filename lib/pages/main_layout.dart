@@ -7,10 +7,6 @@ import 'package:sahalat/pages/profile_page.dart';
 import 'package:sahalat/theme/app_theme.dart';
 import 'package:sahalat/services/navigation_service.dart';
 import 'package:sahalat/services/auth_service.dart';
-import 'package:sahalat/pages/about_page.dart';
-import 'package:sahalat/pages/help_support_page.dart';
-import 'package:sahalat/pages/delivery_addresses_page.dart';
-import 'package:sahalat/widgets/app_logo.dart';
 
 class MainLayout extends StatefulWidget {
   final int initialIndex;
@@ -184,7 +180,7 @@ class MainLayoutState extends State<MainLayout> with AutomaticKeepAliveClientMix
                     minWidth: 18,
                     minHeight: 18,
                   ),
-                  child: Text(
+                  child: const Text(
                     '2',
                     style: TextStyle(
                       color: AppTheme.primaryColor,
@@ -228,16 +224,16 @@ class MainLayoutState extends State<MainLayout> with AutomaticKeepAliveClientMix
                 backgroundColor: Colors.white,
                 child: Text(
                   _userName.isNotEmpty ? _userName[0].toUpperCase() : '?',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 24.0,
                     color: AppTheme.primaryColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: AppTheme.primaryColor,
-                image: const DecorationImage(
+                image: DecorationImage(
                   image: AssetImage('assets/images/drawer_bg.jpg'),
                   fit: BoxFit.cover,
                   opacity: 0.2,

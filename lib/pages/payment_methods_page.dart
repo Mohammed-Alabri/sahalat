@@ -178,11 +178,11 @@ class _PaymentMethodsPageState extends State<PaymentMethodsPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.add, color: AppTheme.primaryColor, size: 20),
+                  const Icon(Icons.add, color: AppTheme.primaryColor, size: 20),
                   const SizedBox(width: 8),
                   Text(
                     addButtonText,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: AppTheme.primaryColor,
                       fontSize: 16,
                     ),
@@ -254,7 +254,7 @@ class _PaymentMethodsPageState extends State<PaymentMethodsPage> {
                     color: AppTheme.primaryColor.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(4),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Default',
                     style: TextStyle(
                       color: AppTheme.primaryColor,
@@ -270,7 +270,7 @@ class _PaymentMethodsPageState extends State<PaymentMethodsPage> {
               if (!method.isDefault)
                 TextButton(
                   onPressed: () => _setAsDefault(method),
-                  child: Text(
+                  child: const Text(
                     'Set as Default',
                     style: TextStyle(
                       color: AppTheme.primaryColor,
@@ -728,7 +728,7 @@ class _PaymentMethodsPageState extends State<PaymentMethodsPage> {
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: AppTheme.primaryColor),
+        borderSide: const BorderSide(color: AppTheme.primaryColor),
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),

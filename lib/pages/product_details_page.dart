@@ -149,7 +149,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   const SizedBox(height: 16),
                   Text(
                     'OMR ${widget.price.toStringAsFixed(2)}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: AppTheme.primaryColor,
