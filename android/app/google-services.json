@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "717991720734",
+    "project_id": "sahalat-337c6",
+    "storage_bucket": "sahalat-337c6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717991720734:android:2ade1bd9cc81e70631bb0f",
+        "android_client_info": {
+          "package_name": "com.example.sahalat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz0pnsAAwfI-fZ1b6bQVAXSvPK-fFeMBU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
